@@ -11,7 +11,7 @@
 
 CQToolStrip::
 CQToolStrip(QWidget *parent) :
- QWidget(parent), orientation_(Qt::Horizontal), menu_(0), splitterPos_(0), labelHeight_(0)
+ QWidget(parent), orientation_(Qt::Horizontal), menu_(nullptr), splitterPos_(0), labelHeight_(0)
 {
   menuButton_ = new CQToolStripMenuButton(this);
 
@@ -516,8 +516,8 @@ minimumSizeHint() const
 
 CQToolStripArea::
 CQToolStripArea(CQToolStrip *strip) :
- QWidget(strip), strip_(strip), w_(0), flags_(NoFlags),
- alignment_(Qt::AlignLeft | Qt::AlignBottom), label_(0), resizable_(false),
+ QWidget(strip), strip_(strip), w_(nullptr), flags_(NoFlags),
+ alignment_(Qt::AlignLeft | Qt::AlignBottom), label_(nullptr), resizable_(false),
  displayWidth_(-1), clipped_(false)
 {
 }
@@ -527,7 +527,7 @@ CQToolStripArea::
 setWidget(QWidget *w)
 {
   if (w_)
-    w_->setParent(0);
+    w_->setParent(nullptr);
 
   w_ = w;
 
@@ -567,7 +567,7 @@ unsetLabel()
 {
   delete label_;
 
-  label_ = 0;
+  label_ = nullptr;
 }
 
 void
@@ -896,7 +896,7 @@ removeActions()
 
 CQToolStripMenuContents::
 CQToolStripMenuContents(CQToolStripMenu *menu) :
- QWidget(0), menu_(menu)
+ QWidget(nullptr), menu_(menu)
 {
 }
 

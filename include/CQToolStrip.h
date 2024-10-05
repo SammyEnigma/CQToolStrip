@@ -18,7 +18,7 @@ class CQToolStrip : public QWidget {
   Q_OBJECT
 
  public:
-  CQToolStrip(QWidget *parent=0);
+  CQToolStrip(QWidget *parent=nullptr);
 
   Qt::Orientation orientation() const { return orientation_; }
 
